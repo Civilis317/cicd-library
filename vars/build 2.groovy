@@ -18,8 +18,15 @@ def call(String... args) {
 
       stage('Build') {
         steps {
+          echo 'Perform maven build'
           sh '''
              mvn package -DskipTests
+             '''
+          sayHello HOMELAB_DOCKER_REGISTRY
+          sh 'ls -all'
+          sh 'java -version'
+          sh '''
+             docker --version
              '''
         }
       }
