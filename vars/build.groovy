@@ -16,9 +16,12 @@ def call(String... args) {
 
     stages {
 
-      stage('Stage 1') {
+      stage('Build') {
         steps {
-          echo 'Hello world!'
+          echo 'Perform maven build'
+          sh '''
+             mvn package -DskipTests
+             '''
           sayHello HOMELAB_DOCKER_REGISTRY
           sh 'ls -all'
           sh 'java -version'
