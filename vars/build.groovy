@@ -39,6 +39,7 @@ def call(String... args) {
              cp ../../target/*.jar .
              ls
              echo "execute docker build"
+             cat ./build.sh
              '''
         }
       }
