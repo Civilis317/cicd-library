@@ -29,7 +29,8 @@ def call(String... args) {
           sh '''
              cd docker/image
              ls
-             
+             echo "remove any previous jar files"
+             rm ./*.jar || true
              '''
         }
       }
