@@ -31,6 +31,14 @@ def call(String... args) {
              ls
              echo "remove any previous jar files"
              rm ./*.jar || true
+             echo "remove windows-style line-endings"
+             sed -i 's/\r$//' ./*.*
+             echo "make build scripts executable"
+             chmod u+x ./build.sh
+             echo "copy jar files"
+             cp ../../target/*.jar .
+             ls
+             echo "execute docker build"
              '''
         }
       }
