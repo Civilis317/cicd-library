@@ -24,6 +24,16 @@ def call(String... args) {
         }
       }
 
+      stage('Docker Image') {
+        steps {
+          sh '''
+             cd docker/image
+             ls
+             
+             '''
+        }
+      }
+
     }
   }
 }
