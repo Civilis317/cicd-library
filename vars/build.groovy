@@ -39,6 +39,7 @@ def call(String... args) {
              cp ../../target/*.jar .
              ls
              echo "execute docker build"
+             sed -i 's/_DOCKER_REGISTRY_/test.local:50000' ./build.sh
              cat ./build.sh
              '''
         }
