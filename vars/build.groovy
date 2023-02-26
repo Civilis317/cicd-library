@@ -27,7 +27,8 @@ def call(String... args) {
       stage('Docker Image') {
         steps {
           withCredentials([usernamePassword(credentialsId: 'DOCKER_REGISTRY_LAVONDYSS_CREDENTIALS', passwordVariable: 'password', usernameVariable: 'username')]) { 
-          sh "docker login -u $username -p $password"
+            sh "docker login -u $username -p $password"
+          }
           sh '''
              cd docker/image
              ls
